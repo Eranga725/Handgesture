@@ -15,17 +15,13 @@ while True:
         fingerUp=detector.fingersUp(lmList)
 
         print(fingerUp)
-        cnt.led(fingerUp)
+        cnt.moter_control(fingerUp)
         if fingerUp==[0,0,0,0,0]:
             cv2.putText(frame,'Fan OFF ',(20,460),cv2.FONT_HERSHEY_COMPLEX,1,(255,255,255),1,cv2.LINE_AA)
         elif fingerUp==[1,0,0,0,0]:
             cv2.putText(frame,' Fan on at low speed ',(20,460),cv2.FONT_HERSHEY_COMPLEX,1,(255,255,255),1,cv2.LINE_AA)    
         elif fingerUp==[0,1,0,0,0]:
             cv2.putText(frame,' Fan on at medium speed ',(20,460),cv2.FONT_HERSHEY_COMPLEX,1,(255,255,255),1,cv2.LINE_AA)
-        elif fingerUp==[0,0,1,0,0]:
-            cv2.putText(frame,' Fan on at high speed ',(20,460),cv2.FONT_HERSHEY_COMPLEX,1,(255,255,255),1,cv2.LINE_AA)
-        elif fingerUp==[0,1,1,1,1]:
-            cv2.putText(frame,'Finger :4',(20,460),cv2.FONT_HERSHEY_COMPLEX,1,(255,255,255),1,cv2.LINE_AA)
         elif fingerUp==[1,1,1,1,1]:
             cv2.putText(frame,'Fan on',(20,460),cv2.FONT_HERSHEY_COMPLEX,1,(255,255,255),1,cv2.LINE_AA) 
 
