@@ -11,7 +11,7 @@ def moter_control(fingerUp):
         motor_speed.write(0)  # Motor off
 
     elif fingerUp == [1, 0, 0, 0, 0]:
-        motor_speed.write(0.3)  # Motor on at low speed
+        motor_speed.write(0.4)  # Motor on at low speed
 
     elif fingerUp == [0, 1, 0, 0, 0]:
         motor_speed.write(0.6)  # Motor on at medium speed
